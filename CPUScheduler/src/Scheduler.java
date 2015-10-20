@@ -13,8 +13,8 @@ public class Scheduler {
 	try
 	{
 		Scanner reader = new Scanner(new File("input.data"));
-		int numOfJobs =Integer.parseInt(reader.next());
-		
+		int numOfJobs =reader.nextInt();
+		int 
 		
 		while(reader.hasNextLine())
 		{
