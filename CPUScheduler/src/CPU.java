@@ -26,6 +26,6 @@ public class CPU {
 	{
 		if(process_time_left > 0)
 			throw new IllegalStateException("Cpu is busy");
-		process_time_left;
+		process_time_left = timeForProcess
 	}
 }
