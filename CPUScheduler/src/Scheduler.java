@@ -1,4 +1,4 @@
-import java.io.File;
+ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -34,7 +34,7 @@ public class Scheduler {
 			processNum++;
 		
 		}
-		beginScheduling(scheduler);
+		beginScheduling(scheduler, processNum);
 		
 		
 	
@@ -46,13 +46,32 @@ public class Scheduler {
 	
 	}
 	
-	public static void beginScheduling(ArrayList<PCB> scheduler)
+	public static void beginScheduling(ArrayList<PCB> scheduler,int totalNum)
 	{
 		Queue<Integer> readyQueue = new LinkedList<Integer>();
 		Collections.sort(scheduler);
+		CPU cpu;
+		int numOfProcesses = totalNum;
+		int currentTime = 0;
+		while(numOfProcesses != 0)
+		{
+			//each time this loop
+			for (int index; index <= numOfProcesses; index ++)
+			{
+				if(!cpu.isBusy() && scheduler.get(index).getArrivalTime() >= currentTime)
+				{
+					cpu = new CPU(scheduler.get(index).getBurstTime());
+			}
+				if (scheduler.get(index).getArrivalTime() >= currentTime)
+				{
+					readyQueue.add(scheduler.get(index).getArrivalTime());
+				}
+			currentTime++;
+		}
+		
 		
 		CPU cpu = new CPU(process.getBurstTime());
-	
+		
 }
 
 	

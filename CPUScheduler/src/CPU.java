@@ -13,7 +13,7 @@ public class CPU {
 	
 	public boolean isBusy()
 	{
-		return (process_time_left > 0)
+		return process_time_left > 0;
 	}
 
 	public void reduceProcessTime()
@@ -26,6 +26,6 @@ public class CPU {
 	{
 		if(process_time_left > 0)
 			throw new IllegalStateException("Cpu is busy");
-		process_time_left = timeForProcess
+		process_time_left = timeForProcess;
 	}
 }
