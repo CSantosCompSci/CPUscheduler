@@ -1,5 +1,5 @@
 //Process creator
-public class PCB implements Comparable<Object>{
+public class PCB implements Comparable<PCB>{
 
 	int process, arrivalTime, burstTime, priority, startTime, endTime;  
 	public PCB(int readProcess, int readArrivalTime,  int readBurstTime, int readPriority)
@@ -40,18 +40,22 @@ public class PCB implements Comparable<Object>{
 		return priority;
 	}
 	
-	public int compareTo(PCB comparesTo)
+	public int comparesTo(PCB obj)
 	{
-		int comparePriority = (comparesTo).getPriority();
-		return this.priority-comparePriority;
-	}
-
-
-	@Override
-	public int compareTo(Object o) {
-		// TODO Auto-generated method stub
+		PCB that = obj;
+		int a = this.priority;
+		int b = that.priority;
+		
+		if( a < b)
+			return 1;
+		if(a > b)
+			return -1;
 		return 0;
+		
 	}
+
+
+	
 	
 	
 	//set the end of process execution
@@ -76,6 +80,13 @@ public class PCB implements Comparable<Object>{
 	public void setStartTime(int start)
 	{
 		startTime = start;
+	}
+
+
+	@Override
+	public int compareTo(PCB o) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 }

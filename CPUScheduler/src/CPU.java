@@ -8,6 +8,7 @@ public class CPU {
 	public CPU(int passedBurstTime)
 	{
 		timeForProcess = passedBurstTime;
+		//System.out.println("time for process = " + timeForProcess);
 		process_time_left = 0;
 	}
 	
@@ -26,6 +27,6 @@ public class CPU {
 	{
 		if(process_time_left > 0)
 			throw new IllegalStateException("Cpu is busy");
-		process_time_left = timeForProcess;
+		process_time_left = timeForProcess; 
 	}
 }
